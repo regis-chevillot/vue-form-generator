@@ -195,12 +195,15 @@ export default {
 						o = o[k];
 					} else {
 						// Create missing property (new level)
-						this.$root.$set(o, k, {});
+						//this.$root.$set(o, k, {});
+						//migrate to vue3
+						o[k] = {};
 						o = o[k];
 					}
 				else {
 					// Set final property value
-					this.$root.$set(o, k, value);
+					//this.$root.$set(o, k, value);
+					o[k] = value;
 					return;
 				}
 
