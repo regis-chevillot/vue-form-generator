@@ -1,4 +1,4 @@
-/*import component from "./formGenerator.vue";
+import component from "./formGenerator.vue";
 import {
 	createDefaultObject,
 	getMultipleFields,
@@ -8,24 +8,19 @@ import {
 } from "./utils/schema.js";
 import validators from "./utils/validators.js";
 import fieldComponents from "./utils/fieldsLoader";
-import abstractField from "./fields/abstractField";*/
+import abstractField from "./fields/abstractField";
 
 const install = (Vue, options) => {
-	//Vue.component("VueFormGenerator", component);
+	Vue.component("VueFormGenerator", component);
 	if (options && options.validators) {
 		for (let key in options.validators) {
 			if ({}.hasOwnProperty.call(options.validators, key)) {
-				//validators[key] = options.validators[key];
+				validators[key] = options.validators[key];
 			}
 		}
 	}
 };
 
-
-export default install;
-
-
-/*
 const schema = {createDefaultObject, getMultipleFields, mergeMultiObjectFields, slugifyFormID, slugify};
 
 export {
@@ -45,4 +40,3 @@ export default {
 	fieldComponents,
 	install
 }
-*/
