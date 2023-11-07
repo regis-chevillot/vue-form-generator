@@ -1,24 +1,48 @@
-const component = require("./formGenerator.vue").default;
-const schema = require("./utils/schema.js");
-const validators = require("./utils/validators.js").default;
-const fieldComponents = require("./utils/fieldsLoader").default;
-const abstractField = require("./fields/abstractField").default;
+/*import component from "./formGenerator.vue";
+import {
+	createDefaultObject,
+	getMultipleFields,
+	mergeMultiObjectFields,
+	slugifyFormID,
+	slugify
+} from "./utils/schema.js";
+import validators from "./utils/validators.js";
+import fieldComponents from "./utils/fieldsLoader";
+import abstractField from "./fields/abstractField";*/
+
 const install = (Vue, options) => {
-	Vue.component("VueFormGenerator", module.exports.component);
+	//Vue.component("VueFormGenerator", component);
 	if (options && options.validators) {
 		for (let key in options.validators) {
 			if ({}.hasOwnProperty.call(options.validators, key)) {
-				validators[key] = options.validators[key];
+				//validators[key] = options.validators[key];
 			}
 		}
 	}
 };
 
-module.exports = {
+
+export default install;
+
+
+/*
+const schema = {createDefaultObject, getMultipleFields, mergeMultiObjectFields, slugifyFormID, slugify};
+
+export {
 	component,
 	schema,
 	validators,
 	abstractField,
 	fieldComponents,
 	install
-};
+}
+
+export default {
+	component,
+	schema,
+	validators,
+	abstractField,
+	fieldComponents,
+	install
+}
+*/

@@ -1,0 +1,1 @@
+(function(e,i){typeof exports=="object"&&typeof module<"u"?module.exports=i():typeof define=="function"&&define.amd?define(i):(e=typeof globalThis<"u"?globalThis:e||self,e.vfg=i())})(this,function(){"use strict";return(i,t)=>{if(t&&t.validators)for(let n in t.validators)({}).hasOwnProperty.call(t.validators,n)}});

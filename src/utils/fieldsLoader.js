@@ -1,21 +1,26 @@
-const forEach = require("lodash").forEach;
+let coreFields = import.meta.glob('../fields/core/*.vue', {eager: true});
 
-let fieldComponents = {};
+let fieldComponents = Object.keys(coreFields).reduce((store, key) => {
+	let compName = key.replace(/.*?([^/]+).vue$/, "$1");
+	store[compName] = coreFields[key].default;
 
-let coreFields = require.context("../fields/core", false, /^\.\/field([\w-_]+)\.vue$/);
+	return store;
+}, {});
 
-forEach(coreFields.keys(), (key) => {
-	let compName = key.replace(/^\.\//, "").replace(/\.vue/, "");
-	fieldComponents[compName] = coreFields(key).default;
-});
 
-if (process.env.FULL_BUNDLE) {
-	let optionalFields = require.context("../fields/optional", false, /^\.\/field([\w-_]+)\.vue$/);
+console.log('ENV', import.meta.env.MODE);
 
-	forEach(optionalFields.keys(), (key) => {
-		let compName = key.replace(/^\.\//, "").replace(/\.vue/, "");
-		fieldComponents[compName] = optionalFields(key).default;
-	});
+if (import.meta.env.MODE === "development") {
+	let optionalFields = import.meta.glob('../fields/optional/*.vue', {eager: true});
+
+	fieldComponents = Object.keys(optionalFields).reduce((store, key) => {
+		let compName = key.replace(/.*?([^/]+).vue$/, "$1");
+		store[compName] = optionalFields[key].default;
+
+		return store;
+	}, fieldComponents);
 }
 
-module.exports = fieldComponents;
+console.log('FIELD', fieldComponents);
+
+export default fieldComponents;
