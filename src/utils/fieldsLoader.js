@@ -8,8 +8,6 @@ let fieldComponents = Object.keys(coreFields).reduce((store, key) => {
 }, {});
 
 
-console.log('ENV', import.meta.env.MODE);
-
 if (import.meta.env.MODE === "development") {
 	let optionalFields = import.meta.glob('../fields/optional/*.vue', {eager: true});
 
@@ -20,7 +18,5 @@ if (import.meta.env.MODE === "development") {
 		return store;
 	}, fieldComponents);
 }
-
-console.log('FIELD', fieldComponents);
 
 export default fieldComponents;
