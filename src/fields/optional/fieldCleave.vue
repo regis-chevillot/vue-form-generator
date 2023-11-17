@@ -65,7 +65,7 @@ export default {
 		}
 	},
 
-	beforeDestroy() {
+  beforeUnmount() {
 		if (this.cleave) {
 			this.cleave.destroy();
 			this.$el.removeEventListener("input", this.inputChange);

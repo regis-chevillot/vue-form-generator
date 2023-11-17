@@ -76,7 +76,7 @@ export default {
 		});
 	},
 
-	beforeDestroy() {
+  beforeUnmount() {
 		if ($.fn.selectpicker) $(this.$el).selectpicker("destroy");
 	}
 };

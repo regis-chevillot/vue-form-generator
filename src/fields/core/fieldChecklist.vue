@@ -11,8 +11,8 @@
       .info {{ selectedCount }} selected
       .arrow
 
-    .dropList
-      .list-row(v-if="comboExpanded", v-for="item in items", :class="{'is-checked': isItemChecked(item)}")
+    .dropList(v-if="comboExpanded")
+      .list-row(v-for="item in items", :class="{'is-checked': isItemChecked(item)}")
         label
           input(:id="getFieldID(schema, true)", type="checkbox", :checked="isItemChecked(item)", :disabled="disabled", @change="onChanged($event, item)", :name="getInputName(item)", v-attributes="'input'")
           | {{ getItemName(item) }}

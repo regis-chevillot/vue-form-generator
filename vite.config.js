@@ -31,19 +31,10 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src'),
-      vue: '@vue/compat'
+      '@': resolve(__dirname, 'src')
     },
   },
   plugins: [
-    vue({
-      template: {
-        compilerOptions: {
-          compatConfig: {
-            MODE: 2
-          }
-        }
-      }
-    })
+    vue()
   ],
 });

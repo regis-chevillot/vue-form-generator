@@ -32,24 +32,13 @@
 </template>
 
 <script>
-import Vue from "vue";
-import VueFormGenerator from "../src";
 import DataTable from "./dataTable.vue";
-
 import Schema from "./schema";
 import { users } from "./data";
 import mixinUtils from "./mixins/utils.js";
-
-import Multiselect from "vue-multiselect";
-Vue.component("multiselect", Multiselect);
-
-// Test custom field
-import FieldAwesome from "./fieldAwesome.vue";
-Vue.component("fieldAwesome", FieldAwesome);
+import {app} from "./main"
 
 import { each, cloneDeep, merge } from "lodash";
-
-Vue.use(VueFormGenerator);
 
 const arrayElement = (arr) => {
 	let random = Math.round(Math.random() * arr.length - 1);
@@ -226,10 +215,10 @@ export default {
 			// VueFormGenerator.validators.resources.fieldIsRequired = "Ezt a mezőt kötelező kitölteni!";
 			// VueFormGenerator.validators.resources.textTooSmall = "A szöveg túl rövid! Jelenleg: {0}, minimum: {1}";
 		});
+
+    window.Vue = app;
 	}
 };
-
-window.Vue = Vue;
 </script>
 
 <style lang="scss">

@@ -50,7 +50,7 @@ export default {
 		this.initialize(objGet(this.schema, "pikadayOptions", {}));
 	},
 
-	beforeDestroy() {
+  beforeUnmount() {
 		if (this.picker) {
 			this.picker.destroy();
 		}

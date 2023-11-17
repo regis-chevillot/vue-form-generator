@@ -476,15 +476,6 @@
     loupe "^2.3.6"
     pretty-format "^27.5.1"
 
-"@vue/compat@^3.3.5":
-  version "3.3.8"
-  resolved "https://registry.yarnpkg.com/@vue/compat/-/compat-3.3.8.tgz#20e7e657158af0ab58ea29436b07d556abcbf014"
-  integrity sha512-ywp40WMF1DKZ4X/HbLPd5gHDyxDk/itDHp8JiSodvI9OyiA53HQS2hstLCh652HDue58gTQlo80HJwQCj+hYRw==
-  dependencies:
-    "@babel/parser" "^7.23.0"
-    estree-walker "^2.0.2"
-    source-map-js "^1.0.2"
-
 "@vue/compiler-core@3.3.8":
   version "3.3.8"
   resolved "https://registry.yarnpkg.com/@vue/compiler-core/-/compiler-core-3.3.8.tgz#301bb60d0245265a88ed5b30e200fbf223acb313"
@@ -8599,10 +8590,10 @@ vue-eslint-parser@^2.0.3:
     esquery "^1.0.0"
     lodash "^4.17.4"
 
-vue-multiselect@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/vue-multiselect/-/vue-multiselect-2.1.0.tgz#9e8ee7087658f029d06778cdb8da0b34ee3f1e28"
-  integrity sha512-mEhApxZ6MUISGLuGDy0RF5UlAKUgG/Qq0DWYE/C+CA1h6ZszM3cHfpNFfFm2AMWLclY2SAWpY1HlQLjsw8WnvQ==
+vue-multiselect@v3.0.0-beta.3:
+  version "3.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/vue-multiselect/-/vue-multiselect-3.0.0-beta.3.tgz#b1348238a84c435582c3f46f2a9c045b29bb976c"
+  integrity sha512-P7Fx+ovVF7WMERSZ0lw6N3p4H4bnQ3NcaY3ORjzFPv0r/6lpIqvFWmK9Xnwze9mgAvmNV1foI1VWrBmjnfBTLQ==
 
 vue-style-loader@4.1.0:
   version "4.1.0"

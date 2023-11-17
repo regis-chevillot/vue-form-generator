@@ -4,7 +4,8 @@ select.form-control(v-model="value", :disabled="disabled", :name="schema.inputNa
 
   template(v-for="item in items")
     optgroup(v-if="item.group", :label="getGroupName(item)")
-      option(v-if="item.ops", v-for="i in item.ops", :value="getItemValue(i)") {{ getItemName(i) }}
+      template(v-if="item.ops")
+        option(v-for="i in item.ops", :value="getItemValue(i)") {{ getItemName(i) }}
 
     option(v-if="!item.group", :value="getItemValue(item)") {{ getItemName(item) }}
 </template>
