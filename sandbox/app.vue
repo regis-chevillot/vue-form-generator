@@ -36,6 +36,7 @@ import DataTable from "./dataTable.vue";
 import Schema from "./schema";
 import { users } from "./data";
 import mixinUtils from "./mixins/utils.js";
+import {app} from "./main"
 
 import { each, cloneDeep, merge } from "lodash";
 
@@ -214,10 +215,10 @@ export default {
 			// VueFormGenerator.validators.resources.fieldIsRequired = "Ezt a mezőt kötelező kitölteni!";
 			// VueFormGenerator.validators.resources.textTooSmall = "A szöveg túl rövid! Jelenleg: {0}, minimum: {1}";
 		});
+
+    window.Vue = app;
 	}
 };
-
-window.Vue = app;
 </script>
 
 <style lang="scss">
