@@ -2,7 +2,7 @@
 multiselect(
 		:id="selectOptions.id",
 		:options="options",
-		:value="value",
+		:model-value="value",
 		:multiple="selectOptions.multiple",
 		:track-by="selectOptions.trackBy || null",
 		:label="selectOptions.label || null",
@@ -32,7 +32,7 @@ multiselect(
 		:disabled="disabled",
 		:max-height="selectOptions.maxHeight",
 		:show-pointer="selectOptions.showPointer",
-		@input="updateSelected",
+    @update:model-value="updateSelected",
 		@select="onSelect",
 		@remove="onRemove",
 		@search-change="onSearchChange",
@@ -48,9 +48,13 @@ multiselect(
 </template>
 <script>
 import abstractField from "../abstractField";
+import Multiselect from 'vue-multiselect';
 
 export default {
 	mixins: [abstractField],
+  components: {
+    Multiselect
+  },
 	computed: {
 		selectOptions() {
 			return this.schema.selectOptions || {};
@@ -108,7 +112,7 @@ export default {
 	},
 	created() {
 		// Check if the component is loaded globally
-		if (!this.$root.$options.components["multiselect"]) {
+		if (!this.$options.components["Multiselect"]) {
 			console.error("'vue-multiselect' is missing. Please download from https://github.com/monterail/vue-multiselect and register the component globally!");
 		}
 	}

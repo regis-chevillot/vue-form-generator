@@ -37,7 +37,7 @@ export default {
 
 	directives: {
 		attributes: {
-			bind: attributesDirective,
+			beforeMount: attributesDirective,
 			updated: attributesDirective,
 			componentUpdated: attributesDirective
 		}

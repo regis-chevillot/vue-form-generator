@@ -46,7 +46,7 @@ export default {
 		});
 	},
 
-	beforeDestroy() {
+  beforeUnmount() {
 		if (window.$ && window.$.fn.datetimepicker) {
 			$(this.$el)
 				.data("DateTimePicker")
