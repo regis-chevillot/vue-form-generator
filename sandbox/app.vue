@@ -33,6 +33,7 @@
 
 <script>
 import DataTable from "./dataTable.vue";
+import VueFormGenerator from "../src";
 import Schema from "./schema";
 import { users } from "./data";
 import mixinUtils from "./mixins/utils.js";
