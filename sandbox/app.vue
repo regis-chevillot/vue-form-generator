@@ -32,24 +32,12 @@
 </template>
 
 <script>
-import Vue from "vue";
-import VueFormGenerator from "../src";
 import DataTable from "./dataTable.vue";
-
 import Schema from "./schema";
 import { users } from "./data";
 import mixinUtils from "./mixins/utils.js";
 
-import Multiselect from "vue-multiselect";
-Vue.component("multiselect", Multiselect);
-
-// Test custom field
-import FieldAwesome from "./fieldAwesome.vue";
-Vue.component("fieldAwesome", FieldAwesome);
-
 import { each, cloneDeep, merge } from "lodash";
-
-Vue.use(VueFormGenerator);
 
 const arrayElement = (arr) => {
 	let random = Math.round(Math.random() * arr.length - 1);
@@ -229,7 +217,7 @@ export default {
 	}
 };
 
-window.Vue = Vue;
+window.Vue = app;
 </script>
 
 <style lang="scss">

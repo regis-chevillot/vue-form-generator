@@ -1,9 +1,13 @@
-import Vue from "vue";
+import { createApp } from "vue";
 import VueFormGenerator from "../src";
-Vue.use(VueFormGenerator);
-
 import App from "./app.vue";
+import Multiselect from "vue-multiselect";
+import FieldAwesome from "./fieldAwesome.vue";
 
-new Vue({
-	...App
-}).$mount("#app");
+export const app = createApp(App);
+
+app.component("multiselect", Multiselect);
+app.component("fieldAwesome", FieldAwesome);
+app.component("VueFormGenerator", VueFormGenerator.component);
+
+app.mount('#app');
