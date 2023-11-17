@@ -25,6 +25,8 @@ function attributesDirective(el, binding, vnode) {
 }
 
 export default {
+	emits: ['validated', 'modelUpdated'],
+
 	props: ["vfg", "model", "schema", "formOptions", "disabled"],
 
 	data() {

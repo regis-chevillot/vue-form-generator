@@ -17,6 +17,7 @@ import formMixin from "./formMixin.js";
 import formGroup from "./formGroup.vue";
 
 export default {
+  emits: ['validated', 'model-updated'],
 	name: "formGenerator",
 	components: { formGroup },
 	mixins: [formMixin],

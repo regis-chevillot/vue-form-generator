@@ -29,6 +29,7 @@ import formMixin from "./formMixin.js";
 import fieldComponents from "./utils/fieldsLoader.js";
 
 export default {
+  emits: ['validated', 'modelUpdated'],
 	name: "form-group",
 	components: fieldComponents,
 	mixins: [formMixin],
