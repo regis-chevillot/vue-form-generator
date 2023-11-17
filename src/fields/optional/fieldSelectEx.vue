@@ -1,7 +1,7 @@
 <template lang="pug">
-	select.selectpicker(v-model="value", :disabled="disabled", :multiple="schema.multiSelect", :title="schema.placeholder", data-width="100%", :name="schema.inputName")
-		option(:disabled="schema.required", v-if="schema.multiSelect !== true", :value="null", :selected="value == undefined")
-		option(v-for="item in items", :value="getItemValue(item)") {{ getItemName(item) }}
+select.selectpicker(v-model="value", :disabled="disabled", :multiple="schema.multiSelect", :title="schema.placeholder", data-width="100%", :name="schema.inputName")
+  option(:disabled="schema.required", v-if="schema.multiSelect !== true", :value="null", :selected="value == undefined")
+  option(v-for="item in items", :value="getItemValue(item)") {{ getItemName(item) }}
 </template>
 
 <script>

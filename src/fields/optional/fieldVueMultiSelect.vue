@@ -1,5 +1,5 @@
 <template lang="pug">
-	multiselect(
+multiselect(
 		:id="selectOptions.id",
 		:options="options",
 		:value="value",

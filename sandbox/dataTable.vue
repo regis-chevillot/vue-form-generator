@@ -1,26 +1,26 @@
 <template lang="pug">
-	table.table.table-hover.table-bordered
-		thead
-			tr
-				th ID
-				th Name
-				th E-mail
-				th Country
-				th Role
-				th Status
+table.table.table-hover.table-bordered
+  thead
+    tr
+      th ID
+      th Name
+      th E-mail
+      th Country
+      th Role
+      th Status
 
-		tbody
-			tr(v-for="row in rows", @click="select($event, row)", :class="{ active: isSelected(row) }")
-				td {{ row.id }}
-				td
-					img(:src="row.avatar")
-					| {{ row.firstName + " " + row.lastName }} ({{row.userName}})
-					.label.label-warning(v-if="!row.status") Inactive
-				td {{ row.email }}
-				td(v-if="row.address") {{ row.address.country }}
-				td {{ getRoleName(row) }}
-				td
-					i.fa(:class=" row.status? 'fa-check' : 'fa-ban' ")
+  tbody
+    tr(v-for="row in rows", @click="select($event, row)", :class="{ active: isSelected(row) }")
+      td {{ row.id }}
+      td
+        img(:src="row.avatar")
+        | {{ row.firstName + " " + row.lastName }} ({{row.userName}})
+        .label.label-warning(v-if="!row.status") Inactive
+      td {{ row.email }}
+      td(v-if="row.address") {{ row.address.country }}
+      td {{ getRoleName(row) }}
+      td
+        i.fa(:class=" row.status? 'fa-check' : 'fa-ban' ")
 </template>
 
 <script>

@@ -1,5 +1,12 @@
 <template lang="pug">
-	input.form-control(type="text", v-model="value", :maxlength="schema.max", :readonly="schema.readonly", :disabled="disabled", :placeholder="schema.placeholder")
+input.form-control(
+  type="text",
+  v-model="value",
+  :maxlength="schema.max",
+  :readonly="schema.readonly",
+  :disabled="disabled",
+  :placeholder="schema.placeholder"
+)
 </template>
 
 <script>
