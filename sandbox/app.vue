@@ -5,6 +5,7 @@
 				<data-table :rows="rows" :selected="selected" :select="selectRow"></data-table>
 			</div>
 		</div>
+    <button @click="validate">validate</button>
 		<div v-show="model" class="row">
 			<div class="col-md-5 col-md-offset-1">
 				<div class="control-buttons text-center">
@@ -37,7 +38,6 @@ import VueFormGenerator from "../src";
 import Schema from "./schema";
 import { users } from "./data";
 import mixinUtils from "./mixins/utils.js";
-import {app} from "./main"
 
 import { each, cloneDeep, merge } from "lodash";
 
@@ -67,8 +67,8 @@ export default {
 			schema: Schema,
 
 			formOptions: {
-				validateAfterLoad: true,
-				validateAfterChanged: true,
+				validateAfterLoad: false,
+				validateAfterChanged: false,
 				validateBeforeSave: true
 			}
 		};
@@ -206,7 +206,7 @@ export default {
 
 	mounted() {
 		this.$nextTick(function() {
-			window.app = this;
+			//window.app = this;
 
 			if (users.length > 0) {
 				this.selectRow(null, arrayElement(users));
@@ -217,7 +217,7 @@ export default {
 			// VueFormGenerator.validators.resources.textTooSmall = "A szöveg túl rövid! Jelenleg: {0}, minimum: {1}";
 		});
 
-    window.Vue = app;
+    //window.Vue = app;
 	}
 };
 </script>

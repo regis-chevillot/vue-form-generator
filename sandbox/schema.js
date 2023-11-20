@@ -3,12 +3,16 @@ import fecha from "fecha";
 import { validators } from "../src";
 
 let customAsyncValidator = function (value) {
-	return new Promise((resolve, reject) => {
+	console.log('validate val');
+	if (!value) {
+		return ["Invalid value from async validator"]
+	}
+	/*return new Promise((resolve, reject) => {
 		setTimeout(() => {
 			if (value) resolve();
 			else reject(["Invalid value from async validator"]);
 		}, 1000);
-	});
+	});*/
 };
 
 export default {
@@ -66,6 +70,7 @@ export default {
 			model: "website",
 			placeholder: "Enter your website",
 			inputName: "website",
+			required: true,
 			validator: customAsyncValidator // validators.url
 		},
 		{

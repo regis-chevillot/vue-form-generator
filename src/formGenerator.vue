@@ -2,13 +2,13 @@
 div.vue-form-generator(v-if='schema != null')
 	component(v-if="schema.fields", :is='tag')
 		template(v-for='field in fields')
-			form-group(v-if='fieldVisible(field)', :vfg="vfg", :field="field", :errors="displayedErrors", :model="model", :options="options", @validated="onFieldValidated", @model-updated="onModelUpdated")
+			form-group(v-if='fieldVisible(field)', ref="items", :vfg="vfg", :field="field", :errors="displayedErrors", :model="model", :options="options", @validated="onFieldValidated", @model-updated="onModelUpdated")
 
 	template(v-for='group in groups')
 		component(:is='tag', :class='getFieldRowClasses(group)')
 			legend(v-if='group.legend') {{ group.legend }}
 			template(v-for='field in group.fields')
-				form-group(v-if='fieldVisible(field)', :vfg="vfg", :field="field", :errors="displayedErrors", :model="model", :options="options", @validated="onFieldValidated", @model-updated="onModelUpdated")
+				form-group(v-if='fieldVisible(field)', ref="items", :vfg="vfg", :field="field", :errors="displayedErrors", :model="model", :options="options", @validated="onFieldValidated", @model-updated="onModelUpdated")
 </template>
 
 <script>
@@ -169,7 +169,7 @@ export default {
 			let fields = [];
 			let results = [];
 
-			forEach(this.$children, child => {
+			forEach(this.$refs.items, child => {
 				if (isFunction(child.validate)) {
 					fields.push(child.$refs.child); // keep track of validated children
 					results.push(child.validate(true));
@@ -210,7 +210,7 @@ export default {
 			// validated event
 			this.displayedErrors.splice(0);
 
-			forEach(this.$children, child => {
+			forEach(this.$refs.items, child => {
 				child.clearValidationErrors();
 			});
 		},
