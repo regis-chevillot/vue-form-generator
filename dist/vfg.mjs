@@ -1,6 +1,6 @@
-import { resolveDirective as Tt, withDirectives as le, openBlock as E, createElementBlock as N, normalizeClass as Me, vModelCheckbox as kg, Fragment as Oe, renderList as Je, createElementVNode as Ee, createTextVNode as Ot, toDisplayString as ge, createCommentVNode as ee, vModelSelect as qg, vModelText as Gg, createBlock as Se, withKeys as ot, withModifiers as he, renderSlot as xe, createVNode as pe, vShow as Wn, Transition as $l, withCtx as Br, resolveDynamicComponent as ls, resolveComponent as Yg } from "vue";
+import { resolveDirective as Tt, withDirectives as le, openBlock as E, createElementBlock as N, normalizeClass as Me, vModelCheckbox as kg, Fragment as Oe, renderList as Je, createElementVNode as Ee, createTextVNode as Ot, toDisplayString as ge, createCommentVNode as ee, vModelSelect as qg, vModelText as Gg, createBlock as Se, withKeys as ot, withModifiers as he, renderSlot as xe, createVNode as pe, vShow as Wn, Transition as $l, withCtx as Br, toRaw as Yg, resolveDynamicComponent as ls, resolveComponent as zg } from "vue";
 var dn = typeof globalThis < "u" ? globalThis : typeof window < "u" ? window : typeof global < "u" ? global : typeof self < "u" ? self : {};
-function zg(r) {
+function Kg(r) {
   return r && r.__esModule && Object.prototype.hasOwnProperty.call(r, "default") ? r.default : r;
 }
 var Pr = { exports: {} };
@@ -3694,14 +3694,14 @@ const ql = {
       return b.isFunction(r.required) ? r.required.call(this, this.model, r, this) : b.isNil(r.required) ? !1 : r.required;
     }
   }
-}, Kg = (r, o = {}) => (b.each(r.fields, (s) => {
+}, Zg = (r, o = {}) => (b.each(r.fields, (s) => {
   b.get(o, s.model) === void 0 && s.default !== void 0 && (b.isFunction(s.default) ? b.set(o, s.model, s.default(s, r, o)) : b.isObject(s.default) || b.isArray(s.default) ? b.set(o, s.model, b.cloneDeep(s.default)) : b.set(o, s.model, s.default));
 }), o), Gl = (r) => {
   let o = [];
   return b.each(r.fields, (s) => {
     s.multi === !0 && o.push(s);
   }), o;
-}, Zg = (r, o) => {
+}, Jg = (r, o) => {
   let s = {}, m = Gl(r);
   return b.each(m, (O) => {
     let p, v = !0, T = O.model;
@@ -3937,8 +3937,8 @@ var Yl = { exports: {} };
     }, r.exports ? r.exports = s : o.fecha = s;
   })(dn);
 })(Yl);
-var Jg = Yl.exports;
-const Bt = /* @__PURE__ */ zg(Jg);
+var Xg = Yl.exports;
+const Bt = /* @__PURE__ */ Kg(Xg);
 let we = {
   fieldIsRequired: "This field is required!",
   invalidFormat: "Invalid format!",
@@ -4204,8 +4204,8 @@ const ft = {
       return r;
     }
   }
-}, Xg = ["id", "autocomplete", "disabled", "name", "required"];
-function Qg(r, o, s, m, O, p) {
+}, Qg = ["id", "autocomplete", "disabled", "name", "required"];
+function jg(r, o, s, m, O, p) {
   const v = Tt("attributes");
   return le((E(), N("input", {
     id: r.getFieldID(r.schema),
@@ -4216,7 +4216,7 @@ function Qg(r, o, s, m, O, p) {
     name: r.schema.inputName,
     class: Me(r.schema.fieldClasses),
     required: r.schema.required
-  }, null, 10, Xg)), [
+  }, null, 10, Qg)), [
     [kg, r.value],
     [v, "input"]
   ]);
@@ -4226,18 +4226,18 @@ const rt = (r, o) => {
   for (const [m, O] of o)
     s[m] = O;
   return s;
-}, jg = {
+}, em = {
   mixins: [ft]
-}, em = /* @__PURE__ */ rt(jg, [["render", Qg]]), tm = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+}, tm = /* @__PURE__ */ rt(em, [["render", jg]]), nm = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: em
-}, Symbol.toStringTag, { value: "Module" })), nm = { class: "wrapper" }, rm = ["disabled"], im = ["id", "checked", "disabled", "onChange", "name"], sm = ["disabled"], um = { class: "info" }, lm = /* @__PURE__ */ Ee("div", { class: "arrow" }, null, -1), am = {
+  default: tm
+}, Symbol.toStringTag, { value: "Module" })), rm = { class: "wrapper" }, im = ["disabled"], sm = ["id", "checked", "disabled", "onChange", "name"], um = ["disabled"], lm = { class: "info" }, am = /* @__PURE__ */ Ee("div", { class: "arrow" }, null, -1), om = {
   key: 0,
   class: "dropList"
-}, om = ["id", "checked", "disabled", "onChange", "name"];
-function fm(r, o, s, m, O, p) {
+}, fm = ["id", "checked", "disabled", "onChange", "name"];
+function hm(r, o, s, m, O, p) {
   const v = Tt("attributes");
-  return le((E(), N("div", nm, [
+  return le((E(), N("div", rm, [
     r.schema.listBox ? (E(), N("div", {
       key: 0,
       class: "listbox form-control",
@@ -4254,13 +4254,13 @@ function fm(r, o, s, m, O, p) {
             disabled: r.disabled,
             onChange: (q) => p.onChanged(q, T),
             name: p.getInputName(T)
-          }, null, 40, im), [
+          }, null, 40, sm), [
             [v, "input"]
           ]),
           Ot(ge(p.getItemName(T)), 1)
         ])
       ], 2))), 256))
-    ], 8, rm)) : ee("", !0),
+    ], 8, im)) : ee("", !0),
     r.schema.listBox ? ee("", !0) : (E(), N("div", {
       key: 1,
       class: "combobox form-control",
@@ -4270,10 +4270,10 @@ function fm(r, o, s, m, O, p) {
         class: Me(["mainRow", { expanded: O.comboExpanded }]),
         onClick: o[0] || (o[0] = (...T) => p.onExpandCombo && p.onExpandCombo(...T))
       }, [
-        Ee("div", um, ge(p.selectedCount) + " selected", 1),
-        lm
+        Ee("div", lm, ge(p.selectedCount) + " selected", 1),
+        am
       ], 2),
-      O.comboExpanded ? (E(), N("div", am, [
+      O.comboExpanded ? (E(), N("div", om, [
         (E(!0), N(Oe, null, Je(p.items, (T) => (E(), N("div", {
           class: Me(["list-row", { "is-checked": p.isItemChecked(T) }])
         }, [
@@ -4285,19 +4285,19 @@ function fm(r, o, s, m, O, p) {
               disabled: r.disabled,
               onChange: (q) => p.onChanged(q, T),
               name: p.getInputName(T)
-            }, null, 40, om), [
+            }, null, 40, fm), [
               [v, "input"]
             ]),
             Ot(ge(p.getItemName(T)), 1)
           ])
         ], 2))), 256))
       ])) : ee("", !0)
-    ], 8, sm))
+    ], 8, um))
   ])), [
     [v, "wrapper"]
   ]);
 }
-const hm = {
+const cm = {
   mixins: [ft],
   data() {
     return {
@@ -4353,17 +4353,17 @@ const hm = {
       this.comboExpanded = !this.comboExpanded;
     }
   }
-}, cm = /* @__PURE__ */ rt(hm, [["render", fm]]), dm = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+}, dm = /* @__PURE__ */ rt(cm, [["render", hm]]), pm = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: cm
-}, Symbol.toStringTag, { value: "Module" })), pm = { class: "wrapper" }, gm = ["id", "type", "value", "disabled", "accept", "alt", "autocomplete", "checked", "dirname", "formaction", "formenctype", "formmethod", "formnovalidate", "formtarget", "height", "list", "max", "maxlength", "min", "minlength", "multiple", "name", "pattern", "placeholder", "readonly", "required", "size", "src", "step", "width", "files"], mm = {
+  default: dm
+}, Symbol.toStringTag, { value: "Module" })), gm = { class: "wrapper" }, mm = ["id", "type", "value", "disabled", "accept", "alt", "autocomplete", "checked", "dirname", "formaction", "formenctype", "formmethod", "formnovalidate", "formtarget", "height", "list", "max", "maxlength", "min", "minlength", "multiple", "name", "pattern", "placeholder", "readonly", "required", "size", "src", "step", "width", "files"], vm = {
   key: 0,
   class: "helper"
 };
-function vm(r, o, s, m, O, p) {
+function _m(r, o, s, m, O, p) {
   const v = Tt("attributes");
   return E(), N(Oe, null, [
-    le(Ee("div", pm, null, 512), [
+    le(Ee("div", gm, null, 512), [
       [v, "wrapper"]
     ]),
     le(Ee("input", {
@@ -4402,17 +4402,17 @@ function vm(r, o, s, m, O, p) {
       step: r.schema.step,
       width: r.schema.width,
       files: r.schema.files
-    }, null, 42, gm), [
+    }, null, 42, mm), [
       [v, "input"]
     ]),
-    r.schema.inputType.toLowerCase() === "color" || r.schema.inputType.toLowerCase() === "range" ? (E(), N("span", mm, ge(r.value), 1)) : ee("", !0)
+    r.schema.inputType.toLowerCase() === "color" || r.schema.inputType.toLowerCase() === "range" ? (E(), N("span", vm, ge(r.value), 1)) : ee("", !0)
   ], 64);
 }
 const Hl = {
   date: "YYYY-MM-DD",
   datetime: "YYYY-MM-DD HH:mm:ss",
   "datetime-local": "YYYY-MM-DDTHH:mm:ss"
-}, _m = {
+}, bm = {
   mixins: [ft],
   computed: {
     inputType() {
@@ -4504,28 +4504,28 @@ const Hl = {
   created() {
     this.schema.inputType.toLowerCase() === "file" && console.warn("The 'file' type in input field is deprecated. Use 'file' field instead.");
   }
-}, bm = /* @__PURE__ */ rt(_m, [["render", vm]]), ym = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+}, ym = /* @__PURE__ */ rt(bm, [["render", _m]]), wm = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: bm
-}, Symbol.toStringTag, { value: "Module" })), wm = ["id"];
-function Sm(r, o, s, m, O, p) {
+  default: ym
+}, Symbol.toStringTag, { value: "Module" })), Sm = ["id"];
+function Om(r, o, s, m, O, p) {
   const v = Tt("attributes");
   return le((E(), N("span", {
     id: r.getFieldID(r.schema),
     class: Me(r.schema.fieldClasses)
   }, [
     Ot(ge(r.value), 1)
-  ], 10, wm)), [
+  ], 10, Sm)), [
     [v, "label"]
   ]);
 }
-const Om = {
+const Tm = {
   mixins: [ft]
-}, Tm = /* @__PURE__ */ rt(Om, [["render", Sm]]), Am = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+}, Am = /* @__PURE__ */ rt(Tm, [["render", Om]]), Cm = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: Tm
-}, Symbol.toStringTag, { value: "Module" })), Cm = ["disabled"], Lm = ["id", "disabled", "name", "onClick", "value", "checked", "required"];
-function Im(r, o, s, m, O, p) {
+  default: Am
+}, Symbol.toStringTag, { value: "Module" })), Lm = ["disabled"], Im = ["id", "disabled", "name", "onClick", "value", "checked", "required"];
+function xm(r, o, s, m, O, p) {
   const v = Tt("attributes");
   return le((E(), N("div", {
     class: "radio-list",
@@ -4544,18 +4544,18 @@ function Im(r, o, s, m, O, p) {
         checked: p.isItemChecked(T),
         class: Me(r.schema.fieldClasses),
         required: r.schema.required
-      }, null, 10, Lm), [
+      }, null, 10, Im), [
         [v, "input"]
       ]),
       Ot(ge(p.getItemName(T)), 1)
     ], 2)), [
       [v, "label"]
     ])), 256))
-  ], 8, Cm)), [
+  ], 8, Lm)), [
     [v, "wrapper"]
   ]);
 }
-const xm = {
+const Em = {
   mixins: [ft],
   computed: {
     items() {
@@ -4606,11 +4606,11 @@ const xm = {
       return b.isFunction(o) ? o(this.model) : o;
     }
   }
-}, Em = /* @__PURE__ */ rt(xm, [["render", Im]]), Mm = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+}, Mm = /* @__PURE__ */ rt(Em, [["render", xm]]), Fm = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: Em
-}, Symbol.toStringTag, { value: "Module" })), Fm = ["disabled", "name", "id"], Dm = ["disabled"], Rm = ["label"], Nm = ["value"], Bm = ["value"];
-function Pm(r, o, s, m, O, p) {
+  default: Mm
+}, Symbol.toStringTag, { value: "Module" })), Dm = ["disabled", "name", "id"], Rm = ["disabled"], Nm = ["label"], Bm = ["value"], Pm = ["value"];
+function Vm(r, o, s, m, O, p) {
   const v = Tt("attributes");
   return le((E(), N("select", {
     class: Me(["form-control", r.schema.fieldClasses]),
@@ -4623,7 +4623,7 @@ function Pm(r, o, s, m, O, p) {
       key: 0,
       disabled: r.schema.required,
       value: null
-    }, ge(p.selectOptions.noneSelectedText || "<Nothing selected>"), 9, Dm)),
+    }, ge(p.selectOptions.noneSelectedText || "<Nothing selected>"), 9, Rm)),
     (E(!0), N(Oe, null, Je(p.items, (T) => (E(), N(Oe, null, [
       T.group ? (E(), N("optgroup", {
         key: 0,
@@ -4631,19 +4631,19 @@ function Pm(r, o, s, m, O, p) {
       }, [
         (E(!0), N(Oe, null, Je(T.ops, (q) => (E(), N("option", {
           value: q.value
-        }, ge(q.name), 9, Nm))), 256))
-      ], 8, Rm)) : ee("", !0),
+        }, ge(q.name), 9, Bm))), 256))
+      ], 8, Nm)) : ee("", !0),
       T.group ? ee("", !0) : (E(), N("option", {
         key: 1,
         value: T.value
-      }, ge(T.name), 9, Bm))
+      }, ge(T.name), 9, Pm))
     ], 64))), 256))
-  ], 10, Fm)), [
+  ], 10, Dm)), [
     [qg, r.value],
     [v, "input"]
   ]);
 }
-const Vm = {
+const $m = {
   mixins: [ft],
   computed: {
     selectOptions() {
@@ -4667,11 +4667,11 @@ const Vm = {
       return o;
     }
   }
-}, $m = /* @__PURE__ */ rt(Vm, [["render", Pm]]), Um = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+}, Um = /* @__PURE__ */ rt($m, [["render", Vm]]), Hm = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: $m
-}, Symbol.toStringTag, { value: "Module" })), Hm = ["id", "value", "name", "disabled"];
-function Wm(r, o, s, m, O, p) {
+  default: Um
+}, Symbol.toStringTag, { value: "Module" })), Wm = ["id", "value", "name", "disabled"];
+function km(r, o, s, m, O, p) {
   const v = Tt("attributes");
   return le((E(), N("input", {
     id: r.getFieldID(r.schema),
@@ -4681,11 +4681,11 @@ function Wm(r, o, s, m, O, p) {
     name: r.schema.inputName,
     disabled: r.disabled,
     class: Me(r.schema.fieldClasses)
-  }, null, 10, Hm)), [
+  }, null, 10, Wm)), [
     [v, "input"]
   ]);
 }
-const km = {
+const qm = {
   mixins: [ft],
   methods: {
     onClick(r) {
@@ -4699,11 +4699,11 @@ const km = {
         b.isFunction(this.schema.onSubmit) && this.schema.onSubmit(this.model, this.schema, r);
     }
   }
-}, qm = /* @__PURE__ */ rt(km, [["render", Wm]]), Gm = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+}, Gm = /* @__PURE__ */ rt(qm, [["render", km]]), Ym = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: qm
-}, Symbol.toStringTag, { value: "Module" })), Ym = ["id", "disabled", "maxlength", "minlength", "placeholder", "readonly", "required", "rows", "name"];
-function zm(r, o, s, m, O, p) {
+  default: Gm
+}, Symbol.toStringTag, { value: "Module" })), zm = ["id", "disabled", "maxlength", "minlength", "placeholder", "readonly", "required", "rows", "name"];
+function Km(r, o, s, m, O, p) {
   const v = Tt("attributes");
   return le((E(), N("textarea", {
     class: Me(["form-control", r.schema.fieldClasses]),
@@ -4717,20 +4717,20 @@ function zm(r, o, s, m, O, p) {
     required: r.schema.required,
     rows: r.schema.rows || 2,
     name: r.schema.inputName
-  }, null, 10, Ym)), [
+  }, null, 10, zm)), [
     [Gg, r.value],
     [v, "input"]
   ]);
 }
-const Km = {
+const Zm = {
   mixins: [ft]
-}, Zm = /* @__PURE__ */ rt(Km, [["render", zm]]), Jm = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+}, Jm = /* @__PURE__ */ rt(Zm, [["render", Km]]), Xm = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: Zm
-}, Symbol.toStringTag, { value: "Module" })), Xm = { class: "wrapper" }, Qm = ["id", "name", "accept", "multiple", "placeholder", "readonly", "required", "disabled"];
-function jm(r, o, s, m, O, p) {
+  default: Jm
+}, Symbol.toStringTag, { value: "Module" })), Qm = { class: "wrapper" }, jm = ["id", "name", "accept", "multiple", "placeholder", "readonly", "required", "disabled"];
+function ev(r, o, s, m, O, p) {
   const v = Tt("attributes");
-  return le((E(), N("div", Xm, [
+  return le((E(), N("div", Qm, [
     le(Ee("input", {
       class: "form-control",
       id: r.getFieldID(r.schema),
@@ -4743,37 +4743,37 @@ function jm(r, o, s, m, O, p) {
       readonly: r.schema.readonly,
       required: r.schema.required,
       disabled: r.disabled
-    }, null, 40, Qm), [
+    }, null, 40, jm), [
       [v, "input"]
     ])
   ])), [
     [v, "wrapper"]
   ]);
 }
-const ev = {
+const tv = {
   mixins: [ft],
   methods: {
     onChange(r) {
       b.isFunction(this.schema.onChanged) && this.schema.onChanged.call(this, this.model, this.schema, r, this);
     }
   }
-}, tv = /* @__PURE__ */ rt(ev, [["render", jm]]), nv = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+}, nv = /* @__PURE__ */ rt(tv, [["render", ev]]), rv = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: tv
+  default: nv
 }, Symbol.toStringTag, { value: "Module" }));
 function ss(r) {
   return r === 0 ? !1 : Array.isArray(r) && r.length === 0 ? !0 : !r;
 }
-function rv(r) {
+function iv(r) {
   return (...o) => !r(...o);
 }
-function iv(r, o) {
+function sv(r, o) {
   return r === void 0 && (r = "undefined"), r === null && (r = "null"), r === !1 && (r = "false"), r.toString().toLowerCase().indexOf(o.trim()) !== -1;
 }
 function zl(r, o, s, m) {
-  return o ? r.filter((O) => iv(m(O, s), o)).sort((O, p) => m(O, s).length - m(p, s).length) : r;
+  return o ? r.filter((O) => sv(m(O, s), o)).sort((O, p) => m(O, s).length - m(p, s).length) : r;
 }
-function sv(r) {
+function uv(r) {
   return r.filter((o) => !o.$isLabel);
 }
 function us(r, o) {
@@ -4782,7 +4782,7 @@ function us(r, o) {
     $isLabel: !0
   }), m.concat(O[r])) : m, []);
 }
-function uv(r, o, s, m, O) {
+function lv(r, o, s, m, O) {
   return (p) => p.map((v) => {
     if (!v[s])
       return console.warn("Options passed to vue-multiselect do not contain groups, despite the config."), [];
@@ -4794,7 +4794,7 @@ function uv(r, o, s, m, O) {
   });
 }
 const Wl = (...r) => (o) => r.reduce((s, m) => m(s), o);
-var lv = {
+var av = {
   data() {
     return {
       search: "",
@@ -5058,7 +5058,7 @@ var lv = {
     filteredOptions() {
       const r = this.search || "", o = r.toLowerCase().trim();
       let s = this.options.concat();
-      return this.internalSearch ? s = this.groupValues ? this.filterAndFlat(s, o, this.label) : zl(s, o, this.label, this.customLabel) : s = this.groupValues ? us(this.groupValues, this.groupLabel)(s) : s, s = this.hideSelected ? s.filter(rv(this.isSelected)) : s, this.taggable && o.length && !this.isExistingOption(o) && (this.tagPosition === "bottom" ? s.push({ isTag: !0, label: r }) : s.unshift({ isTag: !0, label: r })), s.slice(0, this.optionsLimit);
+      return this.internalSearch ? s = this.groupValues ? this.filterAndFlat(s, o, this.label) : zl(s, o, this.label, this.customLabel) : s = this.groupValues ? us(this.groupValues, this.groupLabel)(s) : s, s = this.hideSelected ? s.filter(iv(this.isSelected)) : s, this.taggable && o.length && !this.isExistingOption(o) && (this.tagPosition === "bottom" ? s.push({ isTag: !0, label: r }) : s.unshift({ isTag: !0, label: r })), s.slice(0, this.optionsLimit);
     },
     valueKeys() {
       return this.trackBy ? this.internalValue.map((r) => r[this.trackBy]) : this.internalValue;
@@ -5097,7 +5097,7 @@ var lv = {
      */
     filterAndFlat(r, o, s) {
       return Wl(
-        uv(o, s, this.groupValues, this.groupLabel, this.customLabel),
+        lv(o, s, this.groupValues, this.groupLabel, this.customLabel),
         us(this.groupValues, this.groupLabel)
       )(r);
     },
@@ -5109,7 +5109,7 @@ var lv = {
     flatAndStrip(r) {
       return Wl(
         us(this.groupValues, this.groupLabel),
-        sv
+        uv
       )(r);
     },
     /**
@@ -5302,7 +5302,7 @@ var lv = {
       o > this.maxHeight || o > r || this.openDirection === "below" || this.openDirection === "bottom" ? (this.preferredOpenDirection = "below", this.optimizedHeight = Math.min(o - 40, this.maxHeight)) : (this.preferredOpenDirection = "above", this.optimizedHeight = Math.min(r - 40, this.maxHeight));
     }
   }
-}, av = {
+}, ov = {
   data() {
     return {
       pointer: 0,
@@ -5382,9 +5382,9 @@ var lv = {
       this.pointer = r, this.pointerDirty = !0;
     }
   }
-}, ov = {
+}, fv = {
   name: "vue-multiselect",
-  mixins: [lv, av],
+  mixins: [av, ov],
   compatConfig: {
     MODE: 3,
     ATTR_ENUMERATED_COERCION: !1
@@ -5582,11 +5582,11 @@ var lv = {
     }
   }
 };
-const fv = {
+const hv = {
   ref: "tags",
   class: "multiselect__tags"
-}, hv = { class: "multiselect__tags-wrap" }, cv = { class: "multiselect__spinner" }, dv = { key: 0 }, pv = { class: "multiselect__option" }, gv = { class: "multiselect__option" }, mv = /* @__PURE__ */ Ot("No elements found. Consider changing the search query."), vv = { class: "multiselect__option" }, _v = /* @__PURE__ */ Ot("List is empty.");
-function bv(r, o, s, m, O, p) {
+}, cv = { class: "multiselect__tags-wrap" }, dv = { class: "multiselect__spinner" }, pv = { key: 0 }, gv = { class: "multiselect__option" }, mv = { class: "multiselect__option" }, vv = /* @__PURE__ */ Ot("No elements found. Consider changing the search query."), _v = { class: "multiselect__option" }, bv = /* @__PURE__ */ Ot("List is empty.");
+function yv(r, o, s, m, O, p) {
   return E(), Se("div", {
     tabindex: r.searchable ? -1 : s.tabindex,
     class: [{ "multiselect--active": r.isOpen, "multiselect--disabled": s.disabled, "multiselect--above": p.isAbove, "multiselect--has-options-group": p.hasOptionGroup }, "multiselect"],
@@ -5616,7 +5616,7 @@ function bv(r, o, s, m, O, p) {
     xe(r.$slots, "clear", { search: r.search }),
     pe(
       "div",
-      fv,
+      hv,
       [
         xe(r.$slots, "selection", {
           search: r.search,
@@ -5626,7 +5626,7 @@ function bv(r, o, s, m, O, p) {
         }, () => [
           le(pe(
             "div",
-            hv,
+            cv,
             [
               (E(!0), Se(
                 Oe,
@@ -5672,7 +5672,7 @@ function bv(r, o, s, m, O, p) {
             xe(r.$slots, "loading", {}, () => [
               le(pe(
                 "div",
-                cv,
+                dv,
                 null,
                 512
                 /* NEED_PATCH */
@@ -5773,8 +5773,8 @@ function bv(r, o, s, m, O, p) {
               id: "listbox-" + r.id
             }, [
               xe(r.$slots, "beforeList"),
-              r.multiple && r.max === r.internalValue.length ? (E(), Se("li", dv, [
-                pe("span", pv, [
+              r.multiple && r.max === r.internalValue.length ? (E(), Se("li", pv, [
+                pe("span", gv, [
                   xe(r.$slots, "maxElements", {}, () => [
                     Ot(
                       "Maximum of " + ge(r.max) + " options selected. First remove a selected option to select another.",
@@ -5846,9 +5846,9 @@ function bv(r, o, s, m, O, p) {
                 "li",
                 null,
                 [
-                  pe("span", gv, [
+                  pe("span", mv, [
                     xe(r.$slots, "noResult", { search: r.search }, () => [
-                      mv
+                      vv
                     ])
                   ])
                 ],
@@ -5861,9 +5861,9 @@ function bv(r, o, s, m, O, p) {
                 "li",
                 null,
                 [
-                  pe("span", vv, [
+                  pe("span", _v, [
                     xe(r.$slots, "noOptions", {}, () => [
-                      _v
+                      bv
                     ])
                   ])
                 ],
@@ -5886,12 +5886,12 @@ function bv(r, o, s, m, O, p) {
     })
   ], 42, ["tabindex", "aria-owns"]);
 }
-ov.render = bv;
-let kl = /* @__PURE__ */ Object.assign({ "../fields/core/fieldCheckbox.vue": tm, "../fields/core/fieldChecklist.vue": dm, "../fields/core/fieldInput.vue": ym, "../fields/core/fieldLabel.vue": Am, "../fields/core/fieldRadios.vue": Mm, "../fields/core/fieldSelect.vue": Um, "../fields/core/fieldSubmit.vue": Gm, "../fields/core/fieldTextArea.vue": Jm, "../fields/core/fieldUpload.vue": nv }), Kl = Object.keys(kl).reduce((r, o) => {
+fv.render = yv;
+let kl = /* @__PURE__ */ Object.assign({ "../fields/core/fieldCheckbox.vue": nm, "../fields/core/fieldChecklist.vue": pm, "../fields/core/fieldInput.vue": wm, "../fields/core/fieldLabel.vue": Cm, "../fields/core/fieldRadios.vue": Fm, "../fields/core/fieldSelect.vue": Hm, "../fields/core/fieldSubmit.vue": Ym, "../fields/core/fieldTextArea.vue": Xm, "../fields/core/fieldUpload.vue": rv }), Kl = Object.keys(kl).reduce((r, o) => {
   let s = o.replace(/.*?([^/]+).vue$/, "$1");
   return r[s] = kl[o].default, r;
 }, {});
-const yv = {
+const wv = {
   emits: ["validated", "model-updated"],
   name: "form-group",
   components: Kl,
@@ -5958,7 +5958,7 @@ const yv = {
       return b.isFunction(r.hint) ? r.hint.call(this, this.model, r, this) : r.hint;
     },
     fieldErrors(r) {
-      return this.errors.filter((o) => o.field === r).map((o) => o.error);
+      return this.errors.filter((o) => Yg(o.field) === r).map((o) => o.error);
     },
     onModelUpdated(r, o) {
       this.$emit("model-updated", r, o);
@@ -5971,17 +5971,17 @@ const yv = {
         return this.$refs.child.clearValidationErrors();
     }
   }
-}, wv = ["for"], Sv = ["innerHTML"], Ov = {
+}, Sv = ["for"], Ov = ["innerHTML"], Tv = {
   key: 0,
   class: "help"
-}, Tv = /* @__PURE__ */ Ee("i", { class: "icon" }, null, -1), Av = ["innerHTML"], Cv = { class: "field-wrap" }, Lv = {
+}, Av = /* @__PURE__ */ Ee("i", { class: "icon" }, null, -1), Cv = ["innerHTML"], Lv = { class: "field-wrap" }, Iv = {
   key: 0,
   class: "buttons"
-}, Iv = ["onClick", "textContent", "type"], xv = ["innerHTML"], Ev = {
+}, xv = ["onClick", "textContent", "type"], Ev = ["innerHTML"], Mv = {
   key: 2,
   class: "errors help-block"
-}, Mv = ["innerHTML"];
-function Fv(r, o, s, m, O, p) {
+}, Fv = ["innerHTML"];
+function Dv(r, o, s, m, O, p) {
   return E(), N("div", {
     class: Me(["form-group", r.getFieldRowClasses(s.field)])
   }, [
@@ -5992,16 +5992,16 @@ function Fv(r, o, s, m, O, p) {
     }, [
       Ee("span", {
         innerHTML: s.field.label
-      }, null, 8, Sv),
-      s.field.help ? (E(), N("span", Ov, [
-        Tv,
+      }, null, 8, Ov),
+      s.field.help ? (E(), N("span", Tv, [
+        Av,
         Ee("div", {
           class: "helpText",
           innerHTML: s.field.help
-        }, null, 8, Av)
+        }, null, 8, Cv)
       ])) : ee("", !0)
-    ], 10, wv)) : ee("", !0),
-    Ee("div", Cv, [
+    ], 10, Sv)) : ee("", !0),
+    Ee("div", Lv, [
       (E(), Se(ls(p.getFieldType(s.field)), {
         ref: "child",
         vfg: s.vfg,
@@ -6012,36 +6012,36 @@ function Fv(r, o, s, m, O, p) {
         onModelUpdated: p.onModelUpdated,
         onValidated: p.onFieldValidated
       }, null, 40, ["vfg", "disabled", "model", "schema", "formOptions", "onModelUpdated", "onValidated"])),
-      p.buttonVisibility(s.field) ? (E(), N("div", Lv, [
+      p.buttonVisibility(s.field) ? (E(), N("div", Iv, [
         (E(!0), N(Oe, null, Je(s.field.buttons, (v, T) => (E(), N("button", {
           onClick: (q) => p.buttonClickHandler(v, s.field, q),
           class: Me(v.classes),
           key: T,
           textContent: ge(v.label),
           type: p.getButtonType(v)
-        }, null, 10, Iv))), 128))
+        }, null, 10, xv))), 128))
       ])) : ee("", !0)
     ]),
     s.field.hint ? (E(), N("div", {
       key: 1,
       class: "hint",
       innerHTML: p.fieldHint(s.field)
-    }, null, 8, xv)) : ee("", !0),
-    p.fieldErrors(s.field).length > 0 ? (E(), N("div", Ev, [
+    }, null, 8, Ev)) : ee("", !0),
+    p.fieldErrors(s.field).length > 0 ? (E(), N("div", Mv, [
       (E(!0), N(Oe, null, Je(p.fieldErrors(s.field), (v, T) => (E(), N("span", {
         key: T,
         innerHTML: v
-      }, null, 8, Mv))), 128))
+      }, null, 8, Fv))), 128))
     ])) : ee("", !0)
   ], 2);
 }
-const Dv = /* @__PURE__ */ rt(yv, [["render", Fv]]), Rv = {
+const Rv = /* @__PURE__ */ rt(wv, [["render", Dv]]), Nv = {
   key: 0,
   class: "vue-form-generator"
-}, Nv = { key: 0 };
-function Bv(r, o, s, m, O, p) {
-  const v = Yg("form-group");
-  return s.schema != null ? (E(), N("div", Rv, [
+}, Bv = { key: 0 };
+function Pv(r, o, s, m, O, p) {
+  const v = zg("form-group");
+  return s.schema != null ? (E(), N("div", Nv, [
     s.schema.fields ? (E(), Se(ls(s.tag), { key: 0 }, {
       default: Br(() => [
         (E(!0), N(Oe, null, Je(p.fields, (T) => (E(), N(Oe, null, [
@@ -6065,7 +6065,7 @@ function Bv(r, o, s, m, O, p) {
       class: Me(r.getFieldRowClasses(T))
     }, {
       default: Br(() => [
-        T.legend ? (E(), N("legend", Nv, ge(T.legend), 1)) : ee("", !0),
+        T.legend ? (E(), N("legend", Bv, ge(T.legend), 1)) : ee("", !0),
         (E(!0), N(Oe, null, Je(T.fields, (q) => (E(), N(Oe, null, [
           p.fieldVisible(q) ? (E(), Se(v, {
             key: 0,
@@ -6085,10 +6085,10 @@ function Bv(r, o, s, m, O, p) {
     }, 1032, ["class"]))), 256))
   ])) : ee("", !0);
 }
-const Pv = {
+const Vv = {
   emits: ["validated", "model-updated"],
   name: "formGenerator",
-  components: { formGroup: Dv },
+  components: { formGroup: Rv },
   mixins: [ql],
   props: {
     schema: Object,
@@ -6196,7 +6196,7 @@ const Pv = {
               error: ae
             });
           });
-        }), this.displayedErrors = p, this.errors = b.clone(p);
+        }), this.displayedErrors = p, this.errors = p.slice(0);
         let v = this.errors.length === 0;
         return this.$emit("validated", v, this.errors, this), r ? p : v;
       };
@@ -6209,33 +6209,33 @@ const Pv = {
       });
     }
   }
-}, Zl = /* @__PURE__ */ rt(Pv, [["render", Bv]]), Vv = (r, o) => {
+}, Zl = /* @__PURE__ */ rt(Vv, [["render", Pv]]), $v = (r, o) => {
   if (r.component("VueFormGenerator", Zl), o && o.validators)
     for (let s in o.validators)
       ({}).hasOwnProperty.call(o.validators, s) && (Kt[s] = o.validators[s]);
-}, $v = { createDefaultObject: Kg, getMultipleFields: Gl, mergeMultiObjectFields: Zg, slugifyFormID: os, slugify: as }, Hv = {
+}, Uv = { createDefaultObject: Zg, getMultipleFields: Gl, mergeMultiObjectFields: Jg, slugifyFormID: os, slugify: as }, Wv = {
   component: Zl,
-  schema: $v,
+  schema: Uv,
   validators: Kt,
   abstractField: ft,
   fieldComponents: Kl,
-  install: Vv
+  install: $v
 };
 export {
   ft as abstractField,
   Zl as component,
-  Hv as default,
-  em as fieldCheckbox,
-  cm as fieldChecklist,
+  Wv as default,
+  tm as fieldCheckbox,
+  dm as fieldChecklist,
   Kl as fieldComponents,
-  bm as fieldInput,
-  Tm as fieldLabel,
-  Em as fieldRadios,
-  $m as fieldSelect,
-  qm as fieldSubmit,
-  Zm as fieldTextArea,
-  tv as fieldUpload,
-  Vv as install,
-  $v as schema,
+  ym as fieldInput,
+  Am as fieldLabel,
+  Mm as fieldRadios,
+  Um as fieldSelect,
+  Gm as fieldSubmit,
+  Jm as fieldTextArea,
+  nv as fieldUpload,
+  $v as install,
+  Uv as schema,
   Kt as validators
 };

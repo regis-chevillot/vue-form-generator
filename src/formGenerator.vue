@@ -16,6 +16,7 @@ import { get as objGet, forEach, isFunction, isNil, isArray, clone } from "lodas
 import formMixin from "./formMixin.js";
 import formGroup from "./formGroup.vue";
 
+
 export default {
   emits: ['validated', 'model-updated'],
 	name: "formGenerator",
@@ -168,7 +169,6 @@ export default {
 
 			let fields = [];
 			let results = [];
-
 			forEach(this.$refs.items, child => {
 				if (isFunction(child.validate)) {
 					fields.push(child.$refs.child); // keep track of validated children
@@ -189,7 +189,7 @@ export default {
 					}
 				});
 				this.displayedErrors = formErrors;
-				this.errors = clone(formErrors);
+				this.errors = formErrors.slice(0);
 				let isValid = this.errors.length === 0;
 				this.$emit("validated", isValid, this.errors, this);
 				return isAsync ? formErrors : isValid;

@@ -27,6 +27,7 @@ import { get as objGet, isNil, isFunction } from "lodash";
 import { slugifyFormID } from "./utils/schema";
 import formMixin from "./formMixin.js";
 import fieldComponents from "./utils/fieldsLoader.js";
+import { toRaw } from 'vue';
 
 export default {
   emits: ['validated', 'model-updated'],
@@ -103,7 +104,9 @@ export default {
 			return field.hint;
 		},
 		fieldErrors(field) {
-			return this.errors.filter((e) => e.field === field).map((item) => item.error);
+			return this.errors.filter((e) => {
+        return toRaw(e.field) === field;
+      }).map((item) => item.error);
 		},
 		onModelUpdated(newVal, schema) {
 			this.$emit("model-updated", newVal, schema);
