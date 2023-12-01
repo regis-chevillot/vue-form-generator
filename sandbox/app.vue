@@ -183,6 +183,7 @@ export default {
 
 		validate() {
 			// console.log("validate", this.$refs.form, this.$refs.form.validate());
+      this.formOptions.validateAfterChanged = true;
 			return this.$refs.form.validate();
 		},
 

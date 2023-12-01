@@ -105,7 +105,7 @@ export default {
 		},
 		fieldErrors(field) {
 			return this.errors.filter((e) => {
-        return toRaw(e.field) === field;
+        return toRaw(e.field) === toRaw(field);
       }).map((item) => item.error);
 		},
 		onModelUpdated(newVal, schema) {

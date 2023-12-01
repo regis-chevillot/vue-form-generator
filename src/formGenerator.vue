@@ -15,6 +15,7 @@ div.vue-form-generator(v-if='schema != null')
 import { get as objGet, forEach, isFunction, isNil, isArray, clone } from "lodash";
 import formMixin from "./formMixin.js";
 import formGroup from "./formGroup.vue";
+import {toRaw} from "vue";
 
 
 export default {
@@ -135,18 +136,19 @@ export default {
 		// Child field executed validation
 		onFieldValidated(res, errors, field) {
 			// Remove old errors for this field
-			this.displayedErrors = this.displayedErrors.filter(e => e.field !== field.schema);
-			this.errors = this.errors.filter(e => e.field !== field.schema);
+
+			this.displayedErrors = this.displayedErrors.filter(e => toRaw(e.field) !== toRaw(field.schema));
+			this.errors = this.errors.filter(e => toRaw(e.field) !== toRaw(field.schema));
 
 			if (!res && errors && errors.length > 0) {
 				// Add errors with this field
 				forEach(errors, err => {
 					this.displayedErrors.push({
-						field: field.schema,
+						field: toRaw(field.schema),
 						error: err
 					});
 					this.errors.push({
-						field: field.schema,
+						field: toRaw(field.schema),
 						error: err
 					});
 				});
